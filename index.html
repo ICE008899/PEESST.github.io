@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Graduation Surprise</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Audio เล่นต่อเนื่อง -->
+<audio id="gradSound" src="grad-song.mp3" autoplay loop></audio>
+
+<!-- หน้าแรก -->
+<div id="page1">
+    <div id="giftBox">🎁</div>
+    <div id="balloons"></div>
+    <canvas id="confettiCanvas"></canvas>
+    <div class="message" id="gradMessage">🎓 Congratulations! 🎉</div>
+</div>
+
+<!-- หน้าแสดงความยินดี -->
+<div id="page2" style="display:none;">
+    <h1>ยินดีด้วย! คุณจบการศึกษาแล้ว 🎓</h1>
+    <p>ขอแสดงความยินดีในวันสำเร็จการศึกษาของคุณ<br>
+        อนาคตขอให้เต็มไปด้วยความสำเร็จ ความสุข และความภาคภูมิใจ 🌟
+    </p>
+    <!-- รูปหลัก -->
+    <img src="graduate.jpg" alt="Graduate" class="graduate-img">
+
+    <!-- วิดีโอ autoplay -->
+    <video id="gradVideo" class="grad-video" muted autoplay playsinline>
+        <source src="congrats.mp4" type="video/mp4">
+    </video>
+
+    <!-- Carousel Gallery -->
+<div class="carousel-container">
+    <div class="carousel-track">
+        <img src="photo1.jpg" alt="Photo 1">
+        <img src="photo2.jpg" alt="Photo 2">
+        <img src="photo3.jpg" alt="Photo 3">
+        <img src="photo4.jpg" alt="Photo 4">
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

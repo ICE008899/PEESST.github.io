@@ -1,0 +1,168 @@
+/* Reset & Base */
+body {
+    margin:0;
+    padding:0;
+    font-family:"Prompt", sans-serif;
+    background: linear-gradient(135deg, #fffef3, #ffe7b8);
+    overflow-x: hidden;
+}
+
+/* กล่องของขวัญ */
+#giftBox {
+    width:150px;
+    height:150px;
+    margin:100px auto;
+    font-size:80px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition: transform 0.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    border-radius:15px;
+    background: linear-gradient(135deg, #ffd700, #f5e07b);
+}
+
+#giftBox.shake {
+    animation: shake 0.4s;
+}
+
+#giftBox.open {
+    transform: scale(1.2) rotateY(180deg);
+}
+
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    50% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* ลูกโป่งและ confetti */
+#balloons, #confettiCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.balloon {
+    position:absolute;
+    border-radius:50%;
+    opacity:0.9;
+}
+
+.cap {
+    position:absolute;
+}
+
+/* ข้อความ congrat */
+.message {
+    text-align:center;
+    font-size:36px;
+    font-weight:700;
+    color:#d4a017;
+    text-shadow:2px 4px 8px rgba(0,0,0,0.2);
+    margin-top:20px;
+    opacity:0;
+    transition: opacity 1s;
+}
+
+/* หน้าแสดงความยินดี */
+#page2 {
+    text-align:center;
+    padding:50px 20px 100px 20px;
+    color:#333;
+    background: linear-gradient(180deg, #fffef3 0%, #ffe7b8 100%);
+    min-height:100vh;
+}
+
+/* รูปหลัก */
+.graduate-img {
+    width:300px;
+    max-width:80%;
+    margin:20px auto;
+    display:block;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    border:5px solid #ffd700;
+}
+
+/* วิดีโอ autoplay */
+.grad-video {
+    width:50%;
+    max-width:20%;
+    height: auto;
+    margin:20px auto;
+    display:block;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+    border:5px solid #ffd700;
+}
+
+/* Gallery รูปเพิ่มเติม */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin:30px auto;
+    gap:15px;
+}
+
+.gallery img {
+    width:160px;
+    height:120px;
+    object-fit:cover;
+    border-radius:15px;
+    border:3px solid #ffd700;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor:pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow:0 12px 25px rgba(0,0,0,0.4);
+}
+
+/* Responsive มือถือ */
+@media screen and (max-width:768px){
+    #giftBox { margin:50px auto; width:120px; height:120px; font-size:60px; }
+    .graduate-img { width:250px; }
+    .grad-video { width:90%; }
+    .gallery img { width:120px; height:90px; }
+}
+.carousel-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    border: 3px solid #ffd700;
+}
+
+.carousel-track {
+    display: flex;
+    animation: scroll 20s linear infinite;
+}
+
+.carousel-track img {
+    width: 160px;
+    height: 120px;
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    border:3px solid #ffd700;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Animation smooth scroll */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
